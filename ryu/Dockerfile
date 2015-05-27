@@ -41,5 +41,6 @@ RUN cd ryu-master && python setup.py install
 ADD ryu.sh /etc/service/ryu/run
 
 EXPOSE 6633
+EXPOSE 8080
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
