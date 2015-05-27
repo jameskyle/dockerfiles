@@ -2,11 +2,11 @@
 
 set -ex
 
-APP=${APP:-rest_firewall.py}
-ARGS="/config/${APP}"
+APP=${APP:-ryu.app.rest_firewall}
+ARGS=""
 
 if [[ -z $VERBOSE ]]; then
 	ARGS="--verbose ${ARGS}"	
 fi
 
-ryu-manager ${ARGS}
+ryu-manager ${ARGS} ${APP}
