@@ -19,20 +19,25 @@ CMD ["/sbin/my_init"]
 WORKDIR /root
 
 RUN apt-get update
-RUN apt-get install -qy --no-install-recommends \
-			python-setuptools \
-			python-pip \
-			python-eventlet \
-			python-lxml \
-			python-msgpack \
-			python-netaddr \
-			python-oslo.config \
-			python-paramiko \
-			python-routes \
-			python-six \
-			python-webob \
-			unzip \
-			wget
+RUN apt-get install -qy --no-install-recommends python-pip \
+                                                build-essential \
+                                                python-dev \
+                                                unzip \
+                                                wget
+RUN pip install --upgrade pip
+RUN pip install --upgrade eventlet \
+                          lxml \
+                          msgpack \
+                          netaddr \
+                          oslo.config \
+                          paramiko \
+                          routes \
+                          six \
+                          webob
+
+
+
+
 
 RUN wget --no-check-certificate https://github.com/osrg/ryu/archive/master.zip
 RUN unzip master.zip
