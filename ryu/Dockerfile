@@ -39,6 +39,7 @@ RUN unzip master.zip
 RUN cd ryu-master && python setup.py install
 
 ADD ryu.sh /etc/service/ryu/run
+RUN chmod +x /etc/service/ryu/run
 
 EXPOSE 6633
 EXPOSE 8080
