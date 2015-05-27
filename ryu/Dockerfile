@@ -23,11 +23,14 @@ RUN apt-get install -qy --no-install-recommends python-pip \
                                                 build-essential \
                                                 python-dev \
                                                 unzip \
-                                                wget
+                                                wget \
+                                                libxml2-dev \
+                                                libxslt1-dev \
+                                                zlib1g-dev
 RUN pip install --upgrade pip
 RUN pip install --upgrade eventlet \
                           lxml \
-                          msgpack \
+                          msgpack-python \
                           netaddr \
                           oslo.config \
                           paramiko \
